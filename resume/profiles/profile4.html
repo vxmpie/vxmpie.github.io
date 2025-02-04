@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Ice Cream</title>
+    <link rel="stylesheet" href="/resume/css/style.css">
+    <link rel="stylesheet" href="/resume/css/profiles.css">
+    <link rel="stylesheet" href="/resume/css/music.css">
+    <link rel="stylesheet" href="/resume/css/sub-profiles.css">
+    <link rel="icon" type="image/png" href="/resume/images/heart.png">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+    <!-- ปุ่มย้อนกลับ -->
+    <a href="/resume/profiles.html" class="back-button">
+        <img src="/resume/images/left-arrow.png" alt="Back">
+    </a>
+
+    <div class="resume-full-page">
+        <div class="profile-header">
+            <img src="/resume/images/profile4.jpg" alt="Cream" class="profile-pic">
+            <h1 class="name-title">Kanyawe Damna</h1>
+        </div>
+
+        <section class="about">
+            <h2>About Me</h2>
+            <p>เนื่องด้วยปัจจุบัน กำลังศึกษาอยู่ในภาควิชาวิศวกรรมระบบไอโอทีและสารสนเทศ คณะวิศวกรรมศาสตร์ และภาควิชาฟิสิกส์อุตสาหกรรม คณะวิทยาศาสตร์ จึงมีความรู้ในด้านของไอโอที เทคโนโลยี ฟิสิกส์ และวิทยาศาสตร์ นอกจากนี้ยังมีความสนใจในด้านการออกแบบ UX/UI และ Product ต่างๆ</p>
+        </section>
+
+        <section class="info-contact">
+            <div class="personal-info">
+                <h2>Personal Information</h2>
+                <ul>
+                    <li><strong>Name:</strong> กัญญาวีร์ ดำนา</li>
+                    <li><strong>Nickname:</strong> ครีม</li>
+                    <li><strong>Age:</strong> 20 ปี</li>
+                    <li><strong>Birth Date:</strong> 22 กันยายน 2004</li>
+                    <li><strong>Nationality:</strong> ไทย</li>
+                </ul>
+            </div>
+            <div class="contact">
+                <h2>Contact</h2>
+                <ul>
+                    <li>📞 <strong>Tel:</strong> 092-885-6362</li>
+                    <li>📧 <strong>Email:</strong> septemwee@gmail.com</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="experience">
+            <h2>Experience</h2>
+            <div class="experience-container">
+                <div class="experience-left">
+                    <h3>2021-2022</h3>
+                    <ul>
+                        <li>เว็บไซต์คณิตช่วยคิดเซต (Full-Stack)</li>
+                    </ul>
+                </div>
+                <div class="experience-right">
+                    <h3>2023-2024</h3>
+                    <ul>
+                        <li>IoT Project: ระบบเตือนอุทกภัย</li>
+                        <li>Dev Project: เว็บไซต์สีส้มนักบัญชี (UX/UI & Front-End)</li>
+                        <li>IoT Project: ระบบจำลองสภาพอากาศสำหรับพืชเมืองหนาว</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+
+        <section class="skills">
+            <h2>Skills</h2>
+            <div class="skill-bar"><span>Canva</span><div class="progress"><div class="progress-fill" data-width="95"></div></div></div>
+            <div class="skill-bar"><span>Figma</span><div class="progress"><div class="progress-fill" data-width="90"></div></div></div>    
+            <div class="skill-bar"><span>Mircrosoft Excel</span><div class="progress"><div class="progress-fill" data-width="85"></div></div></div>
+            <div class="skill-bar"><span>CSS</span><div class="progress"><div class="progress-fill" data-width="75"></div></div></div>        
+            <div class="skill-bar"><span>C / C++</span><div class="progress"><div class="progress-fill" data-width="70"></div></div></div>
+            <div class="skill-bar"><span>JavaScript</span><div class="progress"><div class="progress-fill" data-width="70"></div></div></div>
+            <div class="skill-bar"><span>HTML</span><div class="progress"><div class="progress-fill" data-width="70"></div></div></div>
+            <div class="skill-bar"><span>Python</span><div class="progress"><div class="progress-fill" data-width="60"></div></div></div>
+        </section>
+    </div>
+
+    <script src="/resume/js/bubbles.js"></script>
+    <script src="/resume/js/music.js"></script>
+    <script src="/resume/js/particles.js"></script>
+    <script src="/resume/js/wave.js"></script>
+    <script src="/resume/js/sub-profiles.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backButton = document.querySelector(".back-button");
+        
+            // ✅ เช็กว่ามีปุ่มก่อน ค่อยเพิ่ม Event Listener
+            if (backButton) {
+                backButton.addEventListener("click", function(event) {
+                    event.preventDefault();
+        
+                    gsap.to("body", { 
+                        filter: "blur(20px)", 
+                        opacity: 0, 
+                        duration: 0.8, 
+                        ease: "power2.inOut", 
+                        onComplete: function () {
+                            window.location.href = "/resume/profiles.html";
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+
+    <div id="music-control">
+        <img id="music-icon" src="/resume/images/music-icon.png" alt="Music Control">
+    </div>
+</body>
+</html>

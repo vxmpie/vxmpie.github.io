@@ -1,0 +1,253 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #FFDEE9, #ec8ed9);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+    min-height: 100vh;
+    padding: 20px;
+    position: relative;
+}
+
+/* Gradient Animation */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Floating Animation */
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Welcome Text Styles */
+.welcome-text {
+    font-size: 4rem;
+    font-weight: 900;
+    color: white;
+    text-shadow: 
+        4px 4px 0 #f480b0,  
+        8px 8px 0 #feb5c0,  
+        12px 12px 0 rgba(255, 100, 150, 0.5);
+    transform: translateY(-5px);
+    transition: transform 0.3s ease-in-out;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+    animation: floating 3s ease-in-out infinite;
+}
+
+.welcome-text:hover {
+    transform: translateY(-10px);
+}
+
+/* Lead Paragraph Styles */
+p.lead {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    text-shadow: 
+        0 0 10px rgba(255, 100, 150, 0.8), 
+        0 0 20px rgba(255, 100, 150, 0.6),
+        0 0 30px rgba(255, 100, 150, 0.4);
+    animation: floating 3s ease-in-out infinite;
+}
+
+/* SLM Text Styles */
+.slm {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: rgb(62, 62, 62);
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Button Styles */
+button {
+    padding: 10px 30px;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
+}
+
+/* Enter with Music Button Styles */
+#enterWithMusic {
+    background: #e59db3;
+    color: white;
+    box-shadow: 0 5px 15px rgba(229, 142, 168, 0.3);
+}
+
+#enterWithMusic:hover {
+    background: #cd8191;
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(212, 132, 156, 0.4);
+}
+
+/* Enter without Music Button Styles */
+#enterWithoutMusic {
+    background: white;
+    color: #d4849c;
+    border: 2px solid #d4849c;
+    box-shadow: 0 5px 15px rgba(212, 132, 156, 0.2);
+}
+
+#enterWithoutMusic:hover {
+    background: #f3d7e1;
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(212, 132, 156, 0.3);
+}
+
+/* Button Group Animation */
+.button-group button {
+    animation: floating 3s ease-in-out infinite alternate;
+}
+
+/* Profile List Image Styles */
+.profile-list img {
+    width: 150px;
+    height: 150px;
+    border-radius: 15px;
+    object-fit: cover;
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.profile-list img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Star Styles */
+.star {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: floatStar linear infinite alternate;
+}
+
+/* Star Animation */
+@keyframes floatStar {
+    from { transform: translateY(0px); }
+    to { transform: translateY(-20px); opacity: 0.5; }
+}
+
+/* Bubble Styles */
+.bubble {
+    position: fixed; /* Changed from absolute to fixed */
+    bottom: -50px;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    animation: floatUp ease-in-out infinite, glowEffect 3s infinite alternate;
+}
+
+/* Glow Effect Animation */
+@keyframes glowEffect {
+    from { box-shadow: 0 0 5px rgba(255, 255, 255, 0.4); }
+    to { box-shadow: 0 0 20px rgba(255, 255, 255, 0.9); }
+}
+
+/* Cloud Styles */
+.cloud {
+    position: absolute;
+    top: 10%;
+    width: 250px;
+    height: 120px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    filter: blur(20px);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+    animation: cloudMove 15s linear infinite alternate;
+}
+
+.cloud:nth-child(2) { top: 50%; left: 20%; animation-duration: 20s; }
+.cloud:nth-child(3) { top: 30%; left: 50%; animation-duration: 18s; }
+.cloud:nth-child(4) { top: 70%; left: 70%; animation-duration: 22s; }
+
+/* Cloud Move Animation */
+@keyframes cloudMove {
+    from { transform: translateX(-50px); }
+    to { transform: translateX(50px); }
+}
+
+/* Twinkle Star Styles */
+.twinkle-star {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 1.5s infinite alternate;
+}
+
+/* Twinkle Animation */
+@keyframes twinkle {
+    from { opacity: 0.3; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1.2); }
+}
+
+/* Wave Effect Styles */
+.wave-effect {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 150, 200, 0.5);
+    border-radius: 50%;
+    transform: scale(1);
+    opacity: 1;
+    animation: waveAnimation 1s ease-out forwards;
+}
+
+/* Wave Animation */
+@keyframes waveAnimation {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(15); opacity: 0; }
+}
+
+/* ปรับ Layout ให้เหมาะกับมือถือ */
+@media screen and (max-width: 768px) {
+    .welcome-text {
+        font-size: 3rem;
+    }
+
+    p.lead {
+        font-size: 1.2rem;
+    }
+
+    .button-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 8px 20px;
+    }
+}
+
+/* ปรับขนาดและระยะห่างให้ดูสมดุล */
+@media screen and (max-width: 480px) {
+    .welcome-text {
+        font-size: 2.5rem;
+    }
+
+    p.lead {
+        font-size: 1rem;
+    }
+}

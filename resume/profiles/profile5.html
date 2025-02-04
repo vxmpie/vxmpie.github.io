@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Latte</title>
+    <link rel="stylesheet" href="/resume/css/style.css">
+    <link rel="stylesheet" href="/resume/css/profiles.css">
+    <link rel="stylesheet" href="/resume/css/music.css">
+    <link rel="stylesheet" href="/resume/css/sub-profiles.css">
+    <link rel="icon" type="image/png" href="/resume/images/heart.png">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+    <!-- ปุ่มย้อนกลับ -->
+    <a href="/resume/profiles.html" class="back-button">
+        <img src="/resume/images/left-arrow.png" alt="Back">
+    </a>
+
+    <div class="resume-full-page">
+        <div class="profile-header">
+            <img src="/resume/images/profile5.jpg" alt="Cream" class="profile-pic">
+            <h1 class="name-title">Khanatip Chimphu</h1>
+        </div>
+
+        <section class="about">
+            <h2>About Me</h2>
+            <p>เป็นคนที่สนใจในด้านฮาร์ดแวร์ เน็ตเวิร์ก Cloud Computing และเว็บแอปพลิเคชัน รวมถึงเคยมีประสบการณ์ในการพัฒนาระบบฐานข้อมูลและการทำงานที่เชื่อมโยงระหว่างฮาร์ดแวร์และซอฟต์แวร์
+                เหตุผลที่ฉันเลือกเรียนสาขานี้ เพราะต้องการทำงานที่รู้สึกพึงพอใจและไม่ต้องเผชิญกับความเครียดมากเกินไป และเชื่อว่าการได้ทำงานในสิ่งที่ชอบจะช่วยให้มีความสุขกับชีวิตการทำงานในระยะยาว
+            </p>
+        </section>
+
+        <section class="info-contact">
+            <div class="personal-info">
+                <h2>Personal Information</h2>
+                <ul>
+                    <li><strong>Name:</strong> คณาธิป ฉิมภู่</li>
+                    <li><strong>Nickname:</strong> ลาเต้</li>
+                    <li><strong>Age:</strong> 20 ปี</li>
+                    <li><strong>Birth Date:</strong> 25 มิถุนายน 2004</li>
+                    <li><strong>Nationality:</strong> ไทย</li>
+                </ul>
+            </div>
+            <div class="contact">
+                <h2>Contact</h2>
+                <ul>
+                    <li>📞 <strong>Tel:</strong> 097-269-5535</li>
+                    <li>📧 <strong>Email:</strong> Iris.khanatip@gmail.com</li>
+                    <li>💬 <strong>Line:</strong> Khanatiptae</li>
+                    <li>📷 <strong>Instagram:</strong> Latte_Keeps</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="experience">
+            <h2>Experience</h2>
+            <div class="experience-container">
+                <div class="experience-left">
+                    <h3>2021-2022</h3>
+                    <ul>
+                        <li>ทำงานแข่งขัน
+                            ผ่านเกณฑ์สอบคัดเลือกการแข่งขันหุ่นยนต์ ส.ส.ท.-สพฐ. ยุวชน 
+                            ประจำปี 2564 Robo Mission Challenge
+                            เหรียญเงิน</li>
+                        <li>งานศิลปหัตถกรรมนักเรียน ครั้งที่ 70 ปีการศึกษา 2565
+                            และได้อันดับรองชนะเลิศอันดับที่หนึ่ง แข่งหุ่นยนต์ระดับกลางมัธยมปลาย</li>
+                    </ul>
+                </div>
+                <div class="experience-right">
+                    <h3>2023-2024</h3>
+                    <ul>
+                        <li>โครงงาน LoRaWan</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+
+        <section class="skills">
+            <h2>Skills</h2>
+            <div class="skill-bar"><span>Hardware</span><div class="progress"><div class="progress-fill" data-width="75"></div></div></div>
+            <div class="skill-bar"><span>Teamwork</span><div class="progress"><div class="progress-fill" data-width="70"></div></div></div>    
+            <div class="skill-bar"><span>HTML</span><div class="progress"><div class="progress-fill" data-width="60"></div></div></div>
+            <div class="skill-bar"><span>CSS</span><div class="progress"><div class="progress-fill" data-width="65"></div></div></div>
+            <div class="skill-bar"><span>C / C++</span><div class="progress"><div class="progress-fill" data-width="70"></div></div></div>
+            <div class="skill-bar"><span>JavaScript</span><div class="progress"><div class="progress-fill" data-width="50"></div></div></div>
+            <div class="skill-bar"><span>Python</span><div class="progress"><div class="progress-fill" data-width="60"></div></div></div>
+        </section>
+    </div>
+
+    <script src="/resume/js/bubbles.js"></script>
+    <script src="/resume/js/music.js"></script>
+    <script src="/resume/js/particles.js"></script>
+    <script src="/resume/js/wave.js"></script>
+    <script src="/resume/js/sub-profiles.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backButton = document.querySelector(".back-button");
+        
+            // ✅ เช็กว่ามีปุ่มก่อน ค่อยเพิ่ม Event Listener
+            if (backButton) {
+                backButton.addEventListener("click", function(event) {
+                    event.preventDefault();
+        
+                    gsap.to("body", { 
+                        filter: "blur(20px)", 
+                        opacity: 0, 
+                        duration: 0.8, 
+                        ease: "power2.inOut", 
+                        onComplete: function () {
+                            window.location.href = "/resume/profiles.html";
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+
+    <div id="music-control">
+        <img id="music-icon" src="/resume/images/music-icon.png" alt="Music Control">
+    </div>
+</body>
+</html>

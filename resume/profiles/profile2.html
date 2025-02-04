@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Cream</title>
+    <link rel="stylesheet" href="/resume/css/style.css">
+    <link rel="stylesheet" href="/resume/css/profiles.css">
+    <link rel="stylesheet" href="/resume/css/music.css">
+    <link rel="stylesheet" href="/resume/css/sub-profiles.css">
+    <link rel="icon" type="image/png" href="/resume/images/heart.png">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+    <!-- ปุ่มย้อนกลับ -->
+    <a href="/resume/profiles.html" class="back-button">
+        <img src="/resume/images/left-arrow.png" alt="Back">
+    </a>
+
+    <div class="resume-full-page">
+        <div class="profile-header">
+            <img src="/resume/images/profile2.jpg" alt="Cream" class="profile-pic">
+            <h1 class="name-title">Yuthika Mongkolgat</h1>
+        </div>
+
+        <section class="about">
+            <h2>About Me</h2>
+            <p>เป็นคนที่ชอบทำกิจกรรมและพัฒนาตัวเองอยู่เสมอ ชอบสอนและให้คำแนะนำผู้อื่น ชื่นชอบในเทคโนโลยี และ ชื่นชอบ Embedded System และมีความรู้ในการประยุกต์ใช้วิทยาศาสตร์ (ฟิสิกส์และชีวะ) เข้าร่วมกับเทคโนโลยี เนื่องจากศึกษาในวิศวกรรมศาสตร์ระบบไอโอทีและสารสนเทศและฟิสิกส์อุตสาหกรรม จึงมีความรู้ที่จะนำทั้งสองศาสตร์มารวมกัน</p>
+        </section>
+
+        <section class="info-contact">
+            <div class="personal-info">
+                <h2>Personal Information</h2>
+                <ul>
+                    <li><strong>Name:</strong> ยูถิกา มงคลเกตุ</li>
+                    <li><strong>Nickname:</strong> ครีม</li>
+                    <li><strong>Age:</strong> 19 ปี</li>
+                    <li><strong>Birth Date:</strong> 18 พฤษภาคม 2005</li>
+                    <li><strong>Nationality:</strong> ไทย</li>
+                </ul>
+            </div>
+            <div class="contact">
+                <h2>Contact</h2>
+                <ul>
+                    <li>📞 <strong>Tel:</strong> 091-187-3496</li>
+                    <li>📧 <strong>Email:</strong> yutika0342@gmail.com</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="experience">
+            <h2>Experience</h2>
+            <div class="experience-container">
+                <div class="experience-left">
+                    <h3>2021-2022</h3>
+                    <ul>
+                        <li>Smart farm Project: ฟาร์มอัจฉริยะ</li>
+                    </ul>
+                </div>
+                <div class="experience-right">
+                    <h3>2023-2024</h3>
+                    <ul>
+                        <li>วิทยากร งานติวTPAT3 สำหรับน้องม.ปลาย</li>
+                        <li>ผู้ช่วยวิทยากร ค่ายสอน IoT</li>
+                        <li>ผู้ช่วยวิทยากร ค่ายสอน AI</li>
+                        <li>คนเก็บข้อมูลและฝ่ายประชาสัมพันธ์ใน Room คณะวิศวกรรมศาสตร์</li>
+                        <li>ฝ่าย Data และ Pr ในค่าย TUE FREE 36</li>
+                        <li>IoT Project: อุปกรณ์ป้องกันเหตุฉุกเฉินในห้องน้ำ ควบคุมการทำงานผ่าน Dashboard ใน Node-red และเก็บข้อมูล และมีการแจ้งเตือนผ่าน Line notify</li>
+                        <li>Web application Project: เว็บ Srisom assistant มีการโต้ตอบโดยใช้ Chat bot และมีฟังก์ชันในการคำนวณภาษี</li>
+
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+
+        <section class="skills">
+            <h2>Skills</h2>
+            <div class="skill-bar"><span>Teamwork</span><div class="progress"><div class="progress-fill" data-width="95"></div></div></div>    
+            <div class="skill-bar"><span>Graphic</span><div class="progress"><div class="progress-fill" data-width="85"></div></div></div>
+            <div class="skill-bar"><span>Internet of Thing</span><div class="progress"><div class="progress-fill" data-width="85"></div></div></div>
+            <div class="skill-bar"><span>C / C++</span><div class="progress"><div class="progress-fill" data-width="70"></div></div></div>
+            <div class="skill-bar"><span>JavaScript</span><div class="progress"><div class="progress-fill" data-width="55"></div></div></div>
+            <div class="skill-bar"><span>HTML</span><div class="progress"><div class="progress-fill" data-width="60"></div></div></div>
+            <div class="skill-bar"><span>CSS</span><div class="progress"><div class="progress-fill" data-width="50"></div></div></div>
+        </section>
+    </div>
+
+    <script src="/resume/js/bubbles.js"></script>
+    <script src="/resume/js/music.js"></script>
+    <script src="/resume/js/particles.js"></script>
+    <script src="/resume/js/wave.js"></script>
+    <script src="/resume/js/sub-profiles.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backButton = document.querySelector(".back-button");
+        
+            // ✅ เช็กว่ามีปุ่มก่อน ค่อยเพิ่ม Event Listener
+            if (backButton) {
+                backButton.addEventListener("click", function(event) {
+                    event.preventDefault();
+        
+                    gsap.to("body", { 
+                        filter: "blur(20px)", 
+                        opacity: 0, 
+                        duration: 0.8, 
+                        ease: "power2.inOut", 
+                        onComplete: function () {
+                            window.location.href = "/resume/profiles.html";
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+
+    <div id="music-control">
+        <img id="music-icon" src="/resume/images/music-icon.png" alt="Music Control">
+    </div>
+</body>
+</html>

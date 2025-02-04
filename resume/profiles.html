@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select the member</title>
+    <link rel="stylesheet" href="/resume/css/style.css">
+    <link rel="stylesheet" href="/resume/css/music.css">
+    <link rel="stylesheet" href="/resume/css/profiles.css">
+    <link rel="icon" type="image/png" href="/resume/images/heart.png">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="slm">Select the member</h1>
+        <div class="profile-list">
+            <a href="profiles/profile1.html"><img src="images/profile1.jpg" alt="Profile 1"></a>
+            <a href="profiles/profile2.html"><img src="images/profile2.jpg" alt="Profile 2"></a>
+            <a href="profiles/profile3.html"><img src="images/profile3.jpg" alt="Profile 3"></a>
+            <a href="profiles/profile4.html"><img src="images/profile4.jpg" alt="Profile 4"></a>
+            <a href="profiles/profile5.html"><img src="images/profile5.jpg" alt="Profile 5"></a>
+        </div>
+    </div>
+    <div id="music-control">
+        <img id="music-icon" src="images/music-icon.png" alt="Music Control">
+    </div>
+    <div id="profile-popup" class="hidden">
+        <div class="popup-content">
+            <img id="popup-image" src="" alt="Profile">
+            <p id="popup-name">Name</p>
+            <div class="popup-buttons">
+                <button id="popup-back">🔙 Back</button>
+                <button id="popup-enter">🚀 Enter</button>
+            </div>
+        </div>
+    </div>
+    <script src="/resume/js/main.js"></script>
+    <script src="/resume/js/music.js"></script>
+    <script src="/resume/js/profiles.js"></script>
+    <script src="/resume/js/bubbles.js"></script>
+    <script src="/resume/js/particles.js"></script>
+    <script src="/resume/js/wave.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            if (typeof fadeInMusic === "function") {  
+                if (sessionStorage.getItem("playMusic") === "true") {
+                    fadeInMusic(); 
+                    isPlaying = true;
+                    sessionStorage.setItem("isMusicPlaying", "true");
+                    sessionStorage.removeItem("playMusic");
+                } else if (sessionStorage.getItem("isMusicPlaying") === "true") {
+                    fadeInMusic();
+                    isPlaying = true;
+                }
+            } else {
+                console.error("❌ fadeInMusic() is not defined. Check if music.js is loaded correctly!");
+            }
+        });
+    </script>
+</body>
+</html>

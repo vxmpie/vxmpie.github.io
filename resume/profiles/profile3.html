@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Meepooh</title>
+    <link rel="stylesheet" href="/resume/css/style.css">
+    <link rel="stylesheet" href="/resume/css/profiles.css">
+    <link rel="stylesheet" href="/resume/css/music.css">
+    <link rel="stylesheet" href="/resume/css/sub-profiles.css">
+    <link rel="icon" type="image/png" href="/resume/images/heart.png">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+    <!-- ปุ่มย้อนกลับ -->
+    <a href="/resume/profiles.html" class="back-button">
+        <img src="/resume/images/left-arrow.png" alt="Back">
+    </a>
+
+    <div class="resume-full-page">
+        <div class="profile-header">
+            <img src="/resume/images/profile3.jpg" alt="Meepooh" class="profile-pic">
+            <h1 class="name-title">Chiratchaya Tangnamprasert</h1>
+        </div>
+
+        <section class="about">
+            <h2>About Me</h2>
+            <p>เป็นคนที่มีความชื่นชอบในการทำงานและเข้าร่วมกิจกรรมเพื่อเรียนรู้สิ่งต่าง ๆ รอบตัว จากผู้คนมากมายและจากการทำงาน      โดยเฉพาะอย่างยิ่งทางด้านวิทยาศาสตร์    และเทคโนโลยี จึงได้เข้าศึกษาต่อในคณะวิศวกรรมระบบไอโอทีและสารสนเทศและฟิสิกส์อุตสาหกรรม สจล. ทำให้ได้เรียนรู้ถึงการประยุกต์ความรู้ทางด้านฟิสิกส์เข้ากับเทคโนโลยี IoT ได้อย่างมีประสิทธิภาพ</p>
+        </section>
+
+        <section class="info-contact">
+            <div class="personal-info">
+                <h2>Personal Information</h2>
+                <ul>
+                    <li><strong>Name:</strong> จิรัชยา ตั้งนามประเสริฐ</li>
+                    <li><strong>Nickname:</strong> หมีพู</li>
+                    <li><strong>Age:</strong> 20 ปี</li>
+                    <li><strong>Birth Date:</strong> 17 สิงหาคม 2004</li>
+                    <li><strong>Nationality:</strong> ไทย</li>
+                </ul>
+            </div>
+            <div class="contact">
+                <h2>Contact</h2>
+                <ul>
+                    <li>📞 <strong>Tel:</strong> 095-865-8969</li>
+                    <li>📧 <strong>Email:</strong> pooh90900@gmail.com</li>
+                    <li>💬 <strong>Line:</strong> meepooh1417</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="experience">
+            <h2>Experience</h2>
+            <div class="experience-container">
+                <div class="experience-left">
+                    <h3>2021-2022</h3>
+                    <ul>
+                        <li>เป็นคณะกรรมการนักเรียน ตำแหน่งหัวหน้าฝ่ายวิชาการ</li>
+                        <li>Web application project: Fight for binge (รางวัลเหรียญทองระดับชาติ)</li>
+                        <li>IoT & Web application project: Mindful Eating อุปกรณ์ช่วยในการปรับเปลี่ยนพฤติกรรม</li>
+                    </ul>
+                </div>
+                <div class="experience-right">
+                    <h3>2023-2024</h3>
+                    <ul>
+                        <li>ประธานชมรม KLLC</li>
+                        <li>รองประธานชุมนุมวิชาการ ทำงานร่วมกับฝ่ายบริหารคณะวิศวกรรมศาสตร์</li>
+                        <li>IoT project: อุปกรณ์ป้องกันเหตุฉุกเฉินในห้องน้ำ</li>
+                        <li>AI project: Sign language by LSTM Model</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+
+        <section class="skills">
+            <h2>Skills</h2>
+            <div class="skill-bar"><span>Leadership</span><div class="progress"><div class="progress-fill" data-width="90"></div></div></div>
+            <div class="skill-bar"><span>Teamwork / Pressure Management</span><div class="progress"><div class="progress-fill" data-width="95"></div></div></div>    
+            <div class="skill-bar"><span>Math / Science</span><div class="progress"><div class="progress-fill" data-width="95"></div></div></div>
+            <div class="skill-bar"><span>Internet of Thing</span><div class="progress"><div class="progress-fill" data-width="80"></div></div></div>
+            <div class="skill-bar"><span>C / C++</span><div class="progress"><div class="progress-fill" data-width="70"></div></div></div>
+            <div class="skill-bar"><span>JavaScript</span><div class="progress"><div class="progress-fill" data-width="50"></div></div></div>
+            <div class="skill-bar"><span>Python</span><div class="progress"><div class="progress-fill" data-width="60"></div></div></div>
+        </section>
+    </div>
+
+    <script src="/resume/js/bubbles.js"></script>
+    <script src="/resume/js/music.js"></script>
+    <script src="/resume/js/particles.js"></script>
+    <script src="/resume/js/wave.js"></script>
+    <script src="/resume/js/sub-profiles.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const backButton = document.querySelector(".back-button");
+        
+            // ✅ เช็กว่ามีปุ่มก่อน ค่อยเพิ่ม Event Listener
+            if (backButton) {
+                backButton.addEventListener("click", function(event) {
+                    event.preventDefault();
+        
+                    gsap.to("body", { 
+                        filter: "blur(20px)", 
+                        opacity: 0, 
+                        duration: 0.8, 
+                        ease: "power2.inOut", 
+                        onComplete: function () {
+                            window.location.href = "/resume/profiles.html";
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+
+    <div id="music-control">
+        <img id="music-icon" src="/resume/images/music-icon.png" alt="Music Control">
+    </div>
+</body>
+</html>
