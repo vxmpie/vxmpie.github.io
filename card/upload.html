@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload PBN File</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/card.css">
+</head>
+<body>
+    <div class="upload-container">
+        <h2>📂 อัปโหลดไฟล์ .pbn</h2>
+        <label for="fileInput">เลือกไฟล์ .pbn:</label>
+        <input type="file" id="fileInput" accept=".pbn" title="เลือกไฟล์ .pbn">
+        <p id="fileName">ยังไม่มีไฟล์</p>
+        <button id="nextStep" disabled>➡️ ไปหน้าต่อไป</button>
+    </div>
+
+    <script>
+        document.getElementById("fileInput").addEventListener("change", function(event) {
+            let file = event.target.files[0];
+            if (file) {
+                document.getElementById("fileName").textContent = "📂 ไฟล์ที่เลือก: " + file.name;
+                document.getElementById("nextStep").disabled = false;
+            }
+        });
+
+        document.getElementById("nextStep").addEventListener("click", function() {
+            window.location.href = "convert.html";
+        });
+    </script>
+</body>
+</html>

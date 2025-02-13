@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert PBN to PDF</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/card.css">
+</head>
+<body>
+    <div class="convert-container">
+        <h2>🔄 แปลงไฟล์เป็น PDF</h2>
+        <button id="convertBtn">เริ่มแปลง</button>
+        <p id="status"></p>
+        <a id="downloadLink" class="hidden">📥 ดาวน์โหลด PDF</a>
+    </div>
+
+    <script>
+        document.getElementById("convertBtn").addEventListener("click", function() {
+            document.getElementById("status").textContent = "⏳ กำลังแปลงไฟล์...";
+            setTimeout(() => {
+                document.getElementById("status").textContent = "✅ เสร็จแล้ว!";
+                document.getElementById("downloadLink").classList.remove("hidden");
+                document.getElementById("downloadLink").href = "example.pdf"; // ตัวอย่าง
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
