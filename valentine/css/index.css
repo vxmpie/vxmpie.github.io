@@ -1,0 +1,139 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ffddff, #ff99cc);
+    text-align: center;
+    color: #ff3385;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* หัวใจลอยบนพื้นหลัง */
+.hearts::before, .hearts::after {
+    content: "💖";
+    position: absolute;
+    font-size: 3em;
+    animation: floatUp 4s infinite ease-in-out;
+}
+
+.hearts::before {
+    left: 15%;
+    top: 30%;
+    animation-delay: 1s;
+}
+
+.hearts::after {
+    right: 15%;
+    top: 60%;
+    animation-delay: 2s;
+}
+
+/* วิบวับรอบๆ */
+.sparkles::before, .sparkles::after {
+    content: "✨";
+    position: absolute;
+    font-size: 2em;
+    animation: twinkle 3s infinite ease-in-out;
+}
+
+.sparkles::before {
+    left: 5%;
+    top: 10%;
+}
+
+.sparkles::after {
+    right: 5%;
+    bottom: 10%;
+}
+
+/* น้องตัวการ์ตูน */
+.cute-character {
+    width: 120px;
+    animation: bounce 1.5s infinite alternate ease-in-out;
+}
+
+/* กล่องต้อนรับ */
+.welcome-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/* ปุ่มกระพริบ & กดแล้วเด้ง */
+button {
+    background-color: #ed86af;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.5em;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 0px 5px 15px rgba(255, 51, 133, 0.4);
+    animation: pulse 1.5s infinite;
+    transition: transform 0.2s;
+}
+
+button:active {
+    transform: scale(0.9);
+}
+
+button:hover {
+    background-color: #ff66b2;
+}
+
+/* เอฟเฟกต์ */
+@keyframes floatUp {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-100px); opacity: 0; }
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    body {
+        background: linear-gradient(135deg, #ffddff, #ff99cc);
+    }
+
+    .welcome-container {
+        width: 90%;
+    }
+
+    .cute-character {
+        width: 100px; /* ปรับขนาดน้องตัวการ์ตูนให้เล็กลง */
+    }
+
+    button {
+        font-size: 1.2em;
+        padding: 12px 25px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .cute-character {
+        width: 80px;
+    }
+
+    button {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+}

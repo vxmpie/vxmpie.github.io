@@ -1,0 +1,154 @@
+/* พื้นหลังหวานๆ วิบวับ */
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: linear-gradient(135deg, #ffe6f2, #ff99cc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* หัวใจลอยๆ */
+@keyframes floatUp {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-100px); opacity: 0; }
+}
+
+.heart {
+    position: absolute;
+    font-size: 2em;
+    animation: floatUp 4s infinite ease-in-out;
+    color: #ff66b2;
+}
+
+/* กล่องข้อความ */
+.letter-container {
+    text-align: center;
+    position: relative;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(255, 51, 133, 0.4);
+    animation: fadeIn 1s ease-in-out;
+    width: 80%;
+    max-width: 400px;
+}
+
+/* แอนิเมชันเปิดการ์ด */
+@keyframes fadeIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* ข้อความข้างใน */
+.letter-content {
+    font-size: 1.2em;
+    color: #ff3385;
+    line-height: 1.5;
+    padding: 20px;
+}
+
+/* ปุ่มเปิดรูปความทรงจำ */
+button {
+    background-color: #ff66b2;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2em;
+    cursor: pointer;
+    box-shadow: 0px 5px 15px rgba(255, 51, 133, 0.4);
+    transition: all 0.3s ease-in-out;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #ff99cc;
+    transform: scale(1.1);
+}
+
+button:active {
+    transform: scale(0.9);
+}
+
+/* Popup สำหรับรูป */
+.photo-popup {
+    display: none;
+    position: fixed;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: all 1s ease-in-out;
+    opacity: 0;
+    transform: scale(0.5) translateY(30px);
+}
+
+/* เอฟเฟกต์ค่อยๆ เลื่อนขึ้นแล้วหายไป */
+.fade-out {
+    opacity: 0 !important;
+    transform: scale(0.8) translateY(-30px) !important;
+}
+
+/* ปรับขนาดรูป */
+.photo-popup img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 10px;
+}
+
+@keyframes fadeOutBubble {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .letter-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .letter-content {
+        font-size: 1em;
+    }
+
+    button {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+
+    .photo-popup img {
+        max-width: 200px; /* ลดขนาดรูปให้พอดีกับมือถือ */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .letter-container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .letter-content {
+        font-size: 0.9em;
+    }
+
+    button {
+        font-size: 0.9em;
+        padding: 8px 18px;
+    }
+
+    .photo-popup img {
+        max-width: 180px;
+    }
+}
