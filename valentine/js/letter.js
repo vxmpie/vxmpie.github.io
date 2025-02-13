@@ -47,7 +47,7 @@ function showRandomPhoto() {
 }
 
 function showHearts() {
-    for (let i = 0; i < 2; i++) {
+    for (let i = 1; i <= 2; i++) {
         let heart = document.createElement("div");
         heart.classList.add("heart");
         heart.innerHTML = "💖";
