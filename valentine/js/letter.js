@@ -42,12 +42,10 @@ function showRandomPhoto() {
             photoPopup.classList.remove("fade-out");
         }, 1000);
     }, 3000);
-
-    showHearts();
 }
 
 function showHearts() {
-    for (let i = 1; i <= 2; i++) {
+    for (let i = 1; i <= 3; i++) {
         let heart = document.createElement("div");
         heart.classList.add("heart");
         heart.innerHTML = "💖";
