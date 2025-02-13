@@ -57,4 +57,4 @@ function showHearts() {
     }
 }
 
-setInterval(showHearts, 2000);
+setInterval(showHearts, 5000);
