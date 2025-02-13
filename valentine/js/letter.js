@@ -1,5 +1,5 @@
 function showRandomPhoto() {
-    const photos = Array.from({ length: 30 }, (_, i) => `/images/${i + 1}.jpg`);
+    const photos = Array.from({ length: 30 }, (_, i) => `/valentine/images/${i + 1}.jpg`);
     let randomIndex = Math.floor(Math.random() * photos.length);
     let photoPopup = document.getElementById("photo-popup");
     let randomPhoto = document.getElementById("random-photo");
