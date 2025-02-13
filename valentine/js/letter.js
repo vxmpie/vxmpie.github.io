@@ -56,5 +56,3 @@ function showHearts() {
         heart.style.top = Math.random() * window.innerHeight + "px";
     }
 }
-
-setInterval(showHearts, 6000);
