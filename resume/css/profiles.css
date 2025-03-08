@@ -3,7 +3,12 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 25px;
+}
+
+.profile-list img {
+    width: 175px; /* เพิ่มขนาดรูป */
+    height: 175px; /* เพิ่มขนาดรูป */
 }
 
 /* เอฟเฟกต์โปรไฟล์ตอน Hover */
@@ -40,6 +45,10 @@ html, body {
     height: 100vh;
 }
 
+.app {
+    margin-top: 10px;
+}
+
 /* จัดการการแสดงผลของคอนเทนเนอร์เรซูเม่ */
 .resume-container {
     background: rgba(255, 255, 255, 0.3);
@@ -68,6 +77,19 @@ h1, h2, p {
 .profile-list img:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.app {
+    margin-top: 35px;
+    background: #48dde0;
+    color: white;
+    box-shadow: 0 5px 15px rgba(129, 212, 250, 0.3);
+    font-weight: bold;
+}
+
+.app:hover {
+    background: #1bbabd;
+    transform: scale(1.1);
 }
 
 /* จัดการการแสดงผลของแถบสกิล */

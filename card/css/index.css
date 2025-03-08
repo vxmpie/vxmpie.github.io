@@ -127,9 +127,7 @@ body {
     font-weight: 800;
     color: white;
     text-shadow: 
-        4px 4px 0 #ff3b3b,  
-        8px 8px 0 #d8d8d8,  
-        12px 12px 0 rgba(255, 100, 150, 0.5);
+        4px 4px 0 #ff3b3b;
     transition: transform 0.3s ease-in-out;
     text-transform: uppercase;
 }
@@ -144,9 +142,7 @@ body {
     font-weight: 600;
     color: white;
     text-shadow: 
-        2px 2px 0 #000000,  
-        4px 4px 0 #d8d8d8,  
-        6px 6px 0 rgba(0, 0, 0, 0.356);
+        2px 2px 0 #000000;
     margin: 40px 0;
     line-height: 1.6;
     letter-spacing: 0.05em;

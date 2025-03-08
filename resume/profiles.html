@@ -15,15 +15,16 @@
     <div class="container">
         <h1 class="slm">Select the member</h1>
         <div class="profile-list">
-            <a href="profiles/profile1.html"><img src="images/profile1.jpg" alt="Profile 1"></a>
-            <a href="profiles/profile2.html"><img src="images/profile2.jpg" alt="Profile 2"></a>
-            <a href="profiles/profile3.html"><img src="images/profile3.jpg" alt="Profile 3"></a>
-            <a href="profiles/profile4.html"><img src="images/profile4.jpg" alt="Profile 4"></a>
-            <a href="profiles/profile5.html"><img src="images/profile5.jpg" alt="Profile 5"></a>
+            <a href="profiles/profile1.html"><img src="/resume/images/profile1.jpg" alt="Profile 1"></a>
+            <a href="profiles/profile2.html"><img src="/resume/images/profile2.jpg" alt="Profile 2"></a>
+            <a href="profiles/profile3.html"><img src="/resume/images/profile3.jpg" alt="Profile 3"></a>
+            <a href="profiles/profile4.html"><img src="/resume/images/profile4.jpg" alt="Profile 4"></a>
+            <a href="profiles/profile5.html"><img src="/resume/images/profile5.jpg" alt="Profile 5"></a>
         </div>
+        <button class="app">💡Our Project</button>
     </div>
     <div id="music-control">
-        <img id="music-icon" src="images/music-icon.png" alt="Music Control">
+        <img id="music-icon" src="/resume/images/music-icon.png" alt="Music Control">
     </div>
     <div id="profile-popup" class="hidden">
         <div class="popup-content">
@@ -55,6 +56,27 @@
                 }
             } else {
                 console.error("❌ fadeInMusic() is not defined. Check if music.js is loaded correctly!");
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const application = document.querySelector(".app");
+        
+            // ✅ เช็กว่ามีปุ่มก่อน ค่อยเพิ่ม Event Listener
+            if (application) {
+                application.addEventListener("click", function(event) {
+                    event.preventDefault();
+        
+                    gsap.to("body", { 
+                        filter: "blur(20px)", 
+                        opacity: 0, 
+                        duration: 0.8, 
+                        ease: "power2.inOut", 
+                        onComplete: function () {
+                            window.location.href = "/resume/app.html";
+                        }
+                    });
+                });
             }
         });
     </script>

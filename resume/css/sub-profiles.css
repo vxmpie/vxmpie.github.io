@@ -32,13 +32,13 @@ body {
     background: rgba(255, 255, 255, 0.3);
     -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
-    padding: 20px;
+    padding: 30px;
     border-radius: 20px; /* ✅ ทำให้ขอบมนขึ้น */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* ✅ เพิ่มเงา */
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.about:hover, .personal-info:hover, .contact:hover, .experience:hover, .skills:hover {
+.about:hover, .personal-info:hover, .contact:hover, .experience:hover, .skills:hover  {
     transform: scale(1.05); /* ✅ เด้งขึ้นนิด ๆ เวลาชี้ */
     box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3); /* ✅ เพิ่ม Glow Effect */
 }

@@ -80,6 +80,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // Check if music should be playing on load
     if (sessionStorage.getItem("playMusic") === "true") {
         sessionStorage.removeItem("playMusic");
+        fadeInMusic();
+        isPlaying = true;
         rotateIcon();
     }
 
