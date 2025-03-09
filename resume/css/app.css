@@ -51,6 +51,7 @@
     transition: opacity 1s ease-out, transform 1s ease-out; /* ✅ ย้ำให้ทำงานชัวร์ */
 }
 
+
 .app-full-page .section.hidden {
     opacity: 0;
     transform: translateY(50px);
@@ -93,21 +94,6 @@
     filter: invert(1); /* เปลี่ยนสีขาวเป็นดำ */
 }
 
-.video-container {
-    width: 100%;
-    max-width: 800px; /* จำกัดขนาดไม่ให้ใหญ่เกิน */
-    margin: 50px auto; /* จัดให้อยู่ตรงกลาง */
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-video {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 10px;
-}
-
 .download-container {
     display: flex;
     justify-content: center;
@@ -137,5 +123,78 @@ video {
     transform: scale(1.1); /* ขยายตอนชี้ */
 }
 
+.download-btn img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
 
+.download-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255, 105, 180, 0.4);
+}
 
+/* 📱 QR Code */
+.qr-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.qr-container h3 {
+    font-size: 1.2rem;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.qr-code {
+    width: 160px;
+    height: 160px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.qr-code:hover {
+    transform: scale(1.1);
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+    .download-wrapper {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .download-container {
+        flex-direction: column;
+    }
+}
+
+.website-link {
+    display: inline-block;
+    padding: 15px 30px;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff; /* สีตัวหนังสือ */
+    text-decoration: none;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #fa99de, #fad0c4); /* สีไล่สีแบบชมพูคิ้วท์ ๆ */
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3); 
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-align: center;
+    letter-spacing: 1px; /* เพิ่มช่องว่างตัวอักษรให้ดูแพง ๆ */
+}
+
+.website-link:hover {
+    transform: translateY(-5px) scale(1.05); /* ให้ปุ่มเด้งดึ๋งตอน hover */
+    box-shadow: 0 10px 20px rgba(255, 105, 180, 0.5); /* เพิ่มเงาให้ดูจึ้ง ๆ */
+    background: linear-gradient(135deg, #fda7df, #ffdde1); /* เปลี่ยนสีเวลาชี้เมาส์ */
+}
+
+.website-link img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
