@@ -8,9 +8,7 @@
     <link rel="stylesheet" href="css/music.css">
     <link rel="icon" type="image/png" href="images/poker.png">
 </head>
-
 <body>
-    <!-- ✅ เอฟเฟกต์สับไพ่ -->
     <div class="card-fall-container" id="cardFallContainer"></div>
     <div class="card-icons-container" id="cardIconsContainer"></div>
     <div class="welcome-container">
@@ -21,44 +19,7 @@
             <button id="enterWithoutMusic" class="btn btn-lg" data-target="card.html">🔇 Enter with silent</button>
         </div>
     </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const transitionEffect = document.getElementById("transitionEffect");
-    
-            if (!transitionEffect) {
-                console.error("Element with id 'transitionEffect' not found.");
-                return;
-            }
-    
-            document.querySelectorAll(".button-group button").forEach(button => {
-                button.addEventListener("click", function(event) {
-                    event.preventDefault();
-                    
-                    // ✅ ดึงค่า target ที่ต้องการไป
-                    const targetPage = this.getAttribute("data-target");
-                    
-                    // ✅ เก็บค่าการตั้งค่าเพลง
-                    if (this.id === "enterWithMusic") {
-                        sessionStorage.setItem("playMusic", "true");
-                        sessionStorage.setItem("isMusicPlaying", "true");
-                    } else {
-                        sessionStorage.setItem("isMusicPlaying", "false");
-                    }     
-    
-                    // ✅ เล่นเอฟเฟกต์ไพ่ก่อนเปลี่ยนหน้า
-                    transitionEffect.classList.add("active");
-    
-                    setTimeout(() => {
-                        window.location.href = targetPage;
-                    }, 800); // 🔥 รอ 0.8 วิก่อนเปลี่ยนหน้า
-                });
-            });
-        });
-    </script>
-
     <script src="js/index.js"></script>
     <script src="js/music.js"></script>
 </body>
-
 </html>

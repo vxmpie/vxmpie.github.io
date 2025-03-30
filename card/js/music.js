@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Initialize audio element
-    const music = new Audio("/music/Jazz.mp3");
+    const music = new Audio("music/Jazz.mp3");
     music.loop = true;
     music.volume = 0.5;
 
@@ -80,8 +80,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Check if music should be playing on load
     if (sessionStorage.getItem("playMusic") === "true") {
         sessionStorage.removeItem("playMusic");
-        fadeInMusic();
-        isPlaying = true;
         rotateIcon();
     }
 
