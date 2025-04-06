@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert PBN to PDF</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/board.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/music.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/convert.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='images/poker.png') }}">
+</head>
+<body>
+    <div class="card-icons-container" id="cardIconsContainer"></div>
+
+    <div id="music-control" data-music-url="{{ url_for('static', filename='music/Jazz.mp3') }}">
+        <img id="music-icon" src="{{ url_for('static', filename='images/music-icon.png') }}" alt="Music Control">
+    </div>
+
+    <header class="header">
+        <h1 class="welcome-text">♠️ Conversion Complete ♦️</h1>
+        <p class="lead">Your PBN file is ready to download</p>
+        <a id="print-btn" class="btn">Download</a>
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+            <span class="progress-card">🃏</span>
+        </div>
+        <p id="status" style="display: none;"></p>
+    </header>
+
+    <div class="container">
+        <section class="convert-section">
+            <h2>🎲 Result</h2>
+            <div class="grid" id="board"></div>
+        </section>
+
+        {% if all_card_tracking %}
+        <pre id="cardTrackingData" style="display: none;">
+            {% for card, positions in all_card_tracking.items() %}{{ card }}={{ positions }}
+            {% endfor %}
+        </pre>
+        {% endif %}
+    </div>
+
+    <script src="{{ url_for('static', filename='js/bg.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/music.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/board.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+</body>
+</html>
+
+    <!-- <script>
+        document.getElementById("print-btn").addEventListener("click", async function () {
+            const printBtn = document.getElementById("print-btn");
+            printBtn.textContent = "Downloading..."; // เปลี่ยนข้อความปุ่ม
+            printBtn.disabled = true; // ปิดปุ่มชั่วคราว
+
+            try {
+                const board = document.getElementById("board");
+                const cards = Array.from(board.children);
+                const cardsPerPage = 9; // 9 ใบต่อหน้า (3x3)
+
+                // สร้าง PDF ขนาด A4
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF("portrait", "mm", "a4");
+
+                // ขนาดไพ่ (mm)
+                const cardWidth = 63;
+                const cardHeight = 88;
+                const spacingX = 5;
+                const spacingY = 5;
+                const startX = 5;
+                const startY = 10;
+
+                let pageIndex = 0;
+
+                for (let i = 0; i < cards.length; i += cardsPerPage) {
+                    if (pageIndex > 0) pdf.addPage();
+
+                    let row = 0, col = 0;
+
+                    for (let j = 0; j < cardsPerPage && i + j < cards.length; j++) {
+                        const card = cards[i + j];
+
+                        // แคปเฉพาะใบนี้
+                        await html2canvas(card, { scale: 3 }).then((canvas) => {
+                            const imgData = canvas.toDataURL("image/png");
+
+                            // คำนวณตำแหน่ง X, Y ตาม Grid 3x3
+                            let x = startX + col * (cardWidth + spacingX);
+                            let y = startY + row * (cardHeight + spacingY);
+
+                            pdf.addImage(imgData, "PNG", x, y, cardWidth, cardHeight);
+                        });
+
+                        // จัดตำแหน่ง Grid (3x3)
+                        col++;
+                        if (col >= 3) {
+                            col = 0;
+                            row++;
+                        }
+                    }
+                    pageIndex++;
+                }
+
+                pdf.save("cards.pdf");
+                console.log("PDF ถูกสร้างและดาวน์โหลดแล้ว");
+            } catch (error) {
+                console.error("Error generating PDF:", error);
+            }
+
+            printBtn.textContent = "Print to PDF"; // เปลี่ยนกลับเป็นปกติ
+            printBtn.disabled = false; // เปิดใช้งานปุ่มอีกครั้ง
+
+        });
+    </script> -->
+
