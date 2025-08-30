@@ -1,0 +1,89 @@
+/* ======================================== */
+/* ==    Portfolio Section Styles        == */
+/* ======================================== */
+
+/* 🖼️ Grid Container สำหรับจัดเรียง Card */
+.portfolio-container {
+    display: grid;
+    /* Portfolio อาจมีเนื้อหาเยอะกว่า เราจึงกำหนดความกว้างขั้นต่ำให้มากกว่าเล็กน้อย */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 25px;
+    padding: 20px;
+    justify-content: center;
+}
+
+/* 🎀 Portfolio Card (สไตล์หลัก) */
+.portfolio-card {
+    background: linear-gradient(135deg, #ffe6e9, #ffc2e0);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+/* 💖 Glow Effect เวลาชี้เมาส์ */
+.portfolio-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(255, 105, 180, 0.4);
+}
+
+/* 🖼️ รูปภาพผลงาน */
+.portfolio-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 🎯 ชื่อผลงาน */
+.portfolio-card h3 {
+    font-size: 1.5rem;
+    color: #d84b65;
+    margin-bottom: 8px;
+}
+
+/* 📝 คำอธิบาย */
+.portfolio-card p {
+    font-size: 1.2rem;
+    line-height: 1.4;
+}
+
+/* 📱 Responsive สำหรับจอเล็กลง */
+@media (max-width: 768px) {
+    .portfolio-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .portfolio-card h3 {
+        font-size: 1.2rem;
+    }
+}
+
+.portfolio-card--span-2 {
+    grid-column: span 2;
+}
+
+/* 🖼️ จัดการกลุ่มรูปภาพ 2 รูปให้อยู่ข้างกัน */
+.card-image-group {
+    display: flex;
+    gap: 15px; /* ระยะห่างระหว่างรูป */
+    margin-bottom: 15px; /* ระยะห่างจากรูปถึงหัวข้อ */
+}
+
+/* 🖼️ ทำให้รูปแต่ละรูปในกลุ่มมีขนาด 50% */
+.card-image-group img {
+    width: 49.2%;
+    /* ทำให้รูปภาพไม่เสียสัดส่วนและเต็มพื้นที่ */
+    object-fit: cover; 
+    aspect-ratio: 9.5 / 9; /* ทำให้รูปภาพมีสัดส่วนเท่ากัน */
+}
+
+/* 📱 ทำให้การ์ดที่ขยายเต็มกลับมาเป็น 1 คอลัมน์บนจอที่เล็กมากๆ */
+@media (max-width: 650px) {
+    .portfolio-card--span-2 {
+        grid-column: span 1; /* กลับเป็นปกติเมื่อหน้าจอแคบลง */
+    }
+}
